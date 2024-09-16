@@ -12,12 +12,12 @@ const EditTopicForm = ({ title, description, id }) => {
   const handleEdit = async(e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`${process.env.BASE_URL}/${id}`, {
-        method: "PUT",
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/${id}`, {
+        method: "PATCH",
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({newTitle, newDescription}),
+        body: JSON.stringify({title: newTitle, description: newDescription}),
       });
       if(res.ok){
         router.refresh();

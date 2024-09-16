@@ -8,7 +8,7 @@ const RemoveBtn = ({ id }) => {
   const handleDelete = async () => {
     const confirmed = confirm("Are you sure??");
     if (confirmed) {
-      const res = await fetch(`${process.env.BASE_URL}?id=${id}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}?id=${id}`, {
         method: "DELETE",
       });
       if (res.ok) {
